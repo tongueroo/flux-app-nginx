@@ -1,0 +1,26 @@
+---
+metadata:
+  namespace: demo-dev-2
+  labels:
+    app: demo
+    role: web
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: demo
+      env: dev
+      role: web
+  template:
+    metadata:
+      labels:
+        app: demo
+        env: dev
+        role: web
+    spec:
+      containers:
+      - name: web
+        image: 869011890257.dkr.ecr.us-west-2.amazonaws.com/demo:kubes-2023-01-31T13-05-29
+  replicas: 1
+apiVersion: apps/v1
+kind: Deployment

@@ -1,0 +1,17 @@
+---
+metadata:
+  namespace: demo-dev-2
+  labels:
+    app: demo
+    role: web
+  name: web
+apiVersion: v1
+kind: Service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    role: web
+  type: ClusterIP
